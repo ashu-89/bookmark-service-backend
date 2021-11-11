@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Registration {
+public class RegistrationRequest {
 
 
     @NotNull(message = "First name should not be null.")
