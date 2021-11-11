@@ -1,6 +1,7 @@
 package com.moneyhop.bookmark.entity;
 
 import lombok.*;
+import org.springframework.context.annotation.Bean;
 import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.validation.constraints.NotNull;
 
 
 @Entity
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

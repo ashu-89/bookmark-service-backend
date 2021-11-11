@@ -23,7 +23,7 @@ public class RegistrationController {
     @RequestMapping(path="/register", method = RequestMethod.POST)
     public ResponseEntity<RegistrationResponse> register(@Valid @RequestBody RegistrationRequest registrationRequest) throws EmailAlreadyRegisteredException, UserNameExistsException {
         //We have checked that none of the fields are null or empty
-        //and relevant fields are well-formed and of suitable length using @Valid before calling service method
+        //and relevant fields are well-formed and of suitable length by using @Valid before calling service method
         Users registeredUser = registrationService.register(registrationRequest);
         RegistrationResponse response = new RegistrationResponse();
         response.setId(registeredUser.getId());
