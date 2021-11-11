@@ -28,7 +28,7 @@ public class LoginController {
     private MyUserDetailsService myUserDetailsService;
 
     @PostMapping("/login")
-    public JwtResponse login( @Valid @RequestBody JwtRequest jwtRequest) throws Exception {
+    public JwtResponse login(  @RequestBody JwtRequest jwtRequest) throws Exception {
 
         //Check if username and password are authentic
         try{

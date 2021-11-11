@@ -28,8 +28,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private MyUserDetailsService myUserDetailsService;
 
-   // @Autowired
-   // private JwtFilter jwtFilter;
+    @Autowired
+    private JwtFilter jwtFilter;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -39,18 +39,18 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("/register")
                 .permitAll()
-                //.antMatchers("/login")
-               // .permitAll()
+                .antMatchers("/login")
+                .permitAll()
                 .antMatchers("/admin")
                 .hasAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()
-                .httpBasic();
-                //.and()
-               // .sessionManagement()
-               // .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-       // http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+                .httpBasic()
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
 

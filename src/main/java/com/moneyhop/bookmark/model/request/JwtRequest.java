@@ -13,13 +13,13 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class JwtRequest {
 
-    @NotNull(message = "User name should not be null.")
-    @NotEmpty(message = "User name should not be empty.")
+    //@NotNull(message = "User name should not be null.")
+    //@NotEmpty(message = "User name should not be empty.")
     private String userName;
 
-    @NotNull(message = "Password should not be null.")
-    @NotEmpty(message = "Password should not be empty.")
-    @Size(min = 8, max = 16, message = "Password should be between 8 and 16 characters long.")
+    //@NotNull(message = "Password should not be null.")
+    //@NotEmpty(message = "Password should not be empty.")
+    //@Size(min = 8, max = 16, message = "Password should be between 8 and 16 characters long.")
     private String password;
 
 }
